@@ -1,6 +1,7 @@
-
 INCLUDE Exploration.ink
 INCLUDE ZenithCity.ink
+INCLUDE Plains.ink
+
 
 VAR cyrus = false
 
