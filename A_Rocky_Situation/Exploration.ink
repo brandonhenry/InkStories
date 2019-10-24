@@ -15,6 +15,8 @@ As you make your way to the plains, you hear a loud yelping noise. It sounded as
 
 If the Essence-infected creatures are as dangerous as Cyrus made them out to be, you ponder if you should go off course to deal with the approaching creature or stay on course towards the Plains.
 
+- (Directions)
+
 * (PursueCreature) [Pursue creature] You decide to pursue the creature.
 * (IgnoreCreature) [Ignore creature] You decide to ignore the creature. ~ignored_creature = true
 
@@ -54,7 +56,9 @@ After taking a second to access the situation, you finally have to come to a dec
     * [Help the {creature}!] -> HelpTheCreature
     * [Ignore the endagered {creature}] 
     You decide to ignore the {creature}'s cries and head to the plains. ~ignored_creature = true -> Plains
-    + (Wait) {cyrus && Wait < 3} [{&Wait and see what happens | Wait a little longer | Continue waiting }] -> CreatureAidOptions
+    + (Wait) {cyrus && Wait < 3} [{&Wait and see what happens | Wait a little longer | Continue waiting }] 
+    {You decide to wait... | You decide to wait a little longer... | You continue to wait patiently...}
+    -> CreatureAidOptions
     
 = HelpTheCreature
  You rush in quickly to help the {creature}. As it sees you, its screams intesifies. It is so loud you can barely think. Grabbing your weapon, you wedge it between the creature and the ground. With all your might, you attempt to lift the boulder to no avail. {not cyrus: Maybe if Cyrus was here, he could help, you think.} 
@@ -76,7 +80,9 @@ Pondering what type of ability to use, you decide to destroy the rock with:
     
     -- You unleashed a devastating {attack} attack upon the boulder. It disperses into tiny pieces freeing the {creature}.
      
-    With joy, the {creature} runs away. Feeling accomplished, you continue your voyage to the plains. -> Plains
+    With joy, the {creature} runs away. 
+    
+    {cyrus: Feeling accomplished, you continue your voyage to the plains. -> Plains | Now that you have identified the source of the crying, you look around and notice that you are still lost. You head back to your starting point. -> Directions }
      
 * [Destroy the rock with your Sword]
 With a mighty swing of your sword, you attempt to destroy the rock. It cracks but your sword isn't powerful enough to destroy the boulder. -> HelpCreatureOptions
